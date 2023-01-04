@@ -1,6 +1,6 @@
-# Interneting Is Hard - CSS Box Model
+# Interneting Is Hard - Floats
 
-This is a solution to the [CSS Box Model tutorial No. 5 of HTML & CSS Is Hard](https://www.internetingishard.com/html-and-css/css-box-model/).
+This is a solution to the [Floats tutorial No. 7 of HTML & CSS Is Hard](https://www.internetingishard.com/html-and-css/floats/).
 
 ## Table of contents
 
@@ -30,33 +30,32 @@ This is a solution to the [CSS Box Model tutorial No. 5 of HTML & CSS Is Hard](h
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
+- HTML5
+- CSS
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This tutorial took a bit of rereading.  Floats are simple enough, but the why's behind some of the behaviors got me.
 
-To see how you can add code snippets, see below:
+To align block elements, I can now use `float: left`, `margin: 0 auto`, and `float: right`.  What's weird is that floating an element tells surrounding elements to wrap around the floated element (versus beginning underneath it like when giving an explicit `width` and `height`).
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+Wrapping is good for magazine-style layouts with images.  But, to get rid of the wrapping, we can have the next element float, too.  This is handy because then the elements stack horizontally (versus vertically without floats).
 
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+Clearing a float and hiding overflow both fix the issue of elements flowing around the floated elements before it, correcting the wonky layout.  Use `clear: both` (or left or right) to fix the `height` issue if there's a non-floated element at the bottom of the same container as the floated ones.  Use `overflow: hidden` if there's no non-floated element to make the container recognize the height of its floated elements.
+
+Another use case for `overflow: hidden` is when you want to clear text below a floated image like in the footer grid of this tutorial.  It breaks the magazine-style layout when we need it.
+
+Russian nesting dolls.  That's what I think of when I think of `<div>` in a `<div>` in a `<div>` (or boxes in boxes in boxes).  It's also what we had to do in this tutorial to achieve a full-bleed layout.  This topic makes the most sense to me when I see a mockup layout and label all the boxes I see.
+
+Finally, floats can also be applied to columns and grids, both of which were also explored in this project.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Since this was a highly experimental project, I'd really like to get some experience building out a real project with these different elements.  While floats is a bit old-school, I think it's wise to practice it more since I'm sure to encounter it at some point in my career.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [MDN Overflow](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow) - Neat CSS demo for the overflow property.
 
 ## Author
 
